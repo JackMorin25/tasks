@@ -1,4 +1,5 @@
 import './mainpage.css';
+import Memo from './memo/memo.jsx'
 
 const mainpage = () => {
 
@@ -10,7 +11,7 @@ const mainpage = () => {
 
         <div id="main-content">
             <div id="add-memo">
-                <button>
+                <button onClick={addMemo}>
                     Add Memo
                 </button>
             </div>
