@@ -29,9 +29,12 @@
     background-color: #0056b3;
 }
 
-#note-location{
+#note-location {
     outline: #0056b3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: start;
 }
