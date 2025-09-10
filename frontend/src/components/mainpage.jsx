@@ -7,18 +7,15 @@ import { useState } from 'react';
 
 const Mainpage = () => {
 
-    const [target, setTarget] = useState("");
-    const [totalMemos, updateMemoList] = useState(0);
+
     const [memos, setMemos] = useState([]);
 
 
     useEffect(() => {
-        setTarget("note-location");
         setMemos([{ title: "test", content: "fish" }]);
     }, []);
 
     function addMemo() {
-        updateMemoList(prev => prev + 1);
         setMemos(prevMemos => [
         ...prevMemos,
         { title: `Memo ${prevMemos.length + 1}`, content: "New memo content" }
