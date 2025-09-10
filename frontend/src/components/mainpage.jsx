@@ -1,10 +1,24 @@
 import './mainpage.css';
 import Memo from './memo/memo.jsx'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 
-const mainpage = () => {
+
+
+const Mainpage = () => {
+
+    const [target, setTarget] = useState("");
+    const [totalMemos, updateMemoList] = useState(0);
+    const memos = [];
+
+    useEffect = () => {
+        setTarget("note-location")
+    }
 
     function addMemo() {
-        console.log("Add Memo clicked");
+        updateMemoList(prev => prev + 1)
+        memos.map()
+
     }
 
     return (
@@ -17,7 +31,9 @@ const mainpage = () => {
             </div>
 
             <div id="note-location">
-                <p>test</p>
+                <Memo title='test' content='i eat large pizza'/>
+                <Memo title='test' content='i eat large burger'/>
+                <Memo title='test' content='i eat large sushi'/>
             </div>
         </div>
 
@@ -25,4 +41,4 @@ const mainpage = () => {
     
 }
 
-export default mainpage;
+export default Mainpage;

@@ -1,11 +1,12 @@
 #main-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 20px;
     background-color: #f9f9f9;
     min-height: 100vh;
+    margin-top: 70px;
 }
 
 #add-memo {
@@ -30,4 +31,7 @@
 
 #note-location{
     outline: #0056b3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
