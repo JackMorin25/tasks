@@ -12,7 +12,7 @@ const Mainpage = () => {
 
 
     useEffect(() => {
-        setMemos([{ title: "test", content: "fish" }]);
+        
     }, []);
 
     function addMemo() {
@@ -32,7 +32,9 @@ const Mainpage = () => {
             </div>
 
             <div id="note-location">
-                {memos.map(memos => <Memo title={memos.title} content={memos.content} />)}
+                {memos.length > 0 &&
+                    memos.map(memos => <Memo title={memos.title} content={memos.content} />)
+                }
             </div>
         </div>
 
