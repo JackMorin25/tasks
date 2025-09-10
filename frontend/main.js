@@ -11,6 +11,7 @@
           contextIsolation: false, // Disable context isolation for simpler IPC (consider security for production)
         },
       });
+      mainWindow.setMenuBarVisibility(false)
 
       // Load React app in development or production
       if (process.env.ELECTRON_START_URL) {
