@@ -10,9 +10,7 @@ cleanup() {
   [ ! -z "$backend_pid" ] && kill $backend_pid
   [ ! -z "$frontend_pid" ] && kill $frontend_pid
   
-  # Stop the Docker container
-  echo "Stopping Docker container..."
-  docker stop execute-test-container 2>/dev/null || true
+  
   
   exit
 }
