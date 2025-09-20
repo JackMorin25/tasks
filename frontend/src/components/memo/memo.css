@@ -1,9 +1,9 @@
 /* Memo notecard styles */
 .memo-card {
-	background: #fffbe6;
-	border: 1px solid #e0e0e0;
+	background: #99e1d9;
+	border: 1px solid #32292f;
 	border-radius: 8px;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+	box-shadow: 0 2px 8px rgba(50,41,47,0.10);
 	width: 220px;
 	min-height: 120px;
 	margin: 16px;
@@ -16,14 +16,14 @@
 }
 
 .memo-card:hover {
-	box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+	box-shadow: 0 4px 16px rgba(50,41,47,0.18);
 }
 
 .memo-title {
 	font-size: 1.1rem;
 	font-weight: bold;
 	margin-bottom: 8px;
-	color: #b8860b;
+	color: #32292f;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -36,6 +36,6 @@
 
 .memo-content {
 	font-size: 0.98rem;
-	color: #333;
+	color: #32292f;
 	word-break: break-word;
 }
