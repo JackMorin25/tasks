@@ -18,7 +18,7 @@
 #add-memo button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #347fc4;
     color: white;
     border: none;
     border-radius: 5px;
@@ -26,7 +26,7 @@
 }
 
 #add-memo button:hover {
-    background-color: #0056b3;
+    background-color: #4C9BE5;
 }
 
 #note-location {
