@@ -21,7 +21,7 @@ def hello_world():
     #load data about stored cards if any
     return "<p>Hello, World!</p>"
 
-@app.route("/memos")
+@app.route("/memos", methods=['GET'])
 def get_memos():
     memos_list = mp(db.get_db)
     return jsonify(memos_list)
