@@ -33,8 +33,10 @@
     outline: #0056b3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
-    gap: 8px;
+    gap: 24px;
     width: 100%;
+    max-width: 2200px;
+    margin: 0 auto;
     box-sizing: border-box;
     justify-items: start;
 }
