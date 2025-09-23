@@ -1,0 +1,13 @@
+#form-container {
+    position: fixed; /* Ensures the popup stays in place relative to the viewport */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the element's own dimensions */
+    z-index: 1000; /* Places the popup above other elements */
+    background-color: white; /* Sets a background color for the popup */
+    padding: 20px; /* Adds some padding inside the popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
+    border-radius: 8px; /* Rounds the corners of the popup */
+    width: 300px; /* Sets a fixed width for the popup */
+    text-align: center; /* Centers the text inside the popup */
+}

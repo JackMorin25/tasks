@@ -1,3 +1,5 @@
+import './popup.css'
+
 const Popup = () => {
 
     return (
@@ -6,7 +8,8 @@ const Popup = () => {
                 <label for="title">Title:</label><br/>
                 <input type="text" id="title" name="title"></input><br/>
                 <label for="msg-content">Text:</label><br/>
-                <input type="text" id="msg-content" name="title"></input>
+                <input type="text" id="msg-content" name="title"></input><br/>
+                <button id="submit">Submit</button>
             </form>
         </div>
     )
