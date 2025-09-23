@@ -25,16 +25,13 @@ const Mainpage = () => {
 
     }, []);
 
-    function addMemo() {
-        setIsSubmitting(true);
-        let popup = document.getElementById("popup")
-        // wait for memo to be filled before adding to memos
-
-
+    function addMemo(t,c) {
         setMemos(prevMemos => [
         ...prevMemos,
-        { title: `Memo ${prevMemos.length + 1}`, content: "New memo content" }
-    ]);
+        { title:t, content:c }
+        ]);
+
+        setIsSubmitting(false);
     }
 
     return (
@@ -42,12 +39,12 @@ const Mainpage = () => {
         <div id="main-content">
 
             <div id="add-memo">
-                <button onClick={addMemo}>
+                <button onClick={() => setIsSubmitting(true)}>
                     Add Memo
                 </button>
             </div>
 
-            {isSubmitting && <Popup id="popup"/>}
+            {isSubmitting && <Popup onSubmit={addMemo}/>}
 
             <div id="note-location">
                 {memos.length > 0 &&
