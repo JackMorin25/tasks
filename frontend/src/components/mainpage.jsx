@@ -1,5 +1,6 @@
 import './mainpage.css';
 import Memo from './memo/memo.jsx'
+import Popup from './popup/popup.jsx';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 
