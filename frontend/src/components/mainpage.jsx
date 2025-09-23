@@ -9,10 +9,18 @@ const Mainpage = () => {
 
 
     const [memos, setMemos] = useState([]);
+    const [data, setData] = useState([]);
 
 
     useEffect(() => {
-        
+        fetch('http://localhost:80/memos')
+        .then(response => response.json())
+        .then(data => {
+            setData(data);
+            //check for response data and update cards
+            console.log(data);
+        });
+
     }, []);
 
     function addMemo() {
