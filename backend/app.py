@@ -23,7 +23,7 @@ def hello_world():
 
 @app.route("/memos", methods=['GET'])
 def get_memos():
-    memos_list = mp(db.get_db)
+    memos_list = mp.get_memos()
     return jsonify(memos_list)
 
 app.run(host="0.0.0.0", port=80)
