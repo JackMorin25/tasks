@@ -1,6 +1,7 @@
 import './mainpage.css';
 import Memo from './memo/memo.jsx'
 import Popup from './popup/popup.jsx';
+import OutsideAlerter from './popup/outsideAlerter.jsx';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -26,10 +27,12 @@ const Mainpage = () => {
     }, []);
 
     function addMemo(t,c) {
-        setMemos(prevMemos => [
-        ...prevMemos,
-        { title:t, content:c }
-        ]);
+        if(c){
+            setMemos(prevMemos => [
+            ...prevMemos,
+            { title:t, content:c }
+            ]);
+        }
 
         setIsSubmitting(false);
     }
@@ -44,7 +47,15 @@ const Mainpage = () => {
                 </button>
             </div>
 
-            {isSubmitting && <Popup onSubmit={addMemo}/>}
+            {isSubmitting && (
+                <div id="popup-blur-bg">
+                    <OutsideAlerter onOutsideClick={() => setIsSubmitting(false)}>
+                    <div id="form-container">
+                        <Popup onSubmit={addMemo}/>
+                    </div>
+                    </OutsideAlerter>
+                </div>
+                )}
 
             <div id="note-location">
                 {memos.length > 0 &&

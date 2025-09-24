@@ -1,21 +1,18 @@
 import './popup.css'
-import OutsideAlerter from './outsideAlerter.jsx';
 
 
 const Popup = ({onSubmit}) => {
 
     function handleSubmit(e){
         e.preventDefault();
-        const title = e.target.title.value;
-        const content = e.target['msg-content'].value;
-        console.log(typeof(content));
+        const title = e.target.title.value.trim();
+        const content = e.target['msg-content'].value.trim();
         onSubmit(title, content);
     }
 
     return (
         <>
             <div id="popup-blur-bg"></div>
-            <OutsideAlerter>
             <div id="form-container">
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="title">Title:</label><br/>
@@ -25,7 +22,8 @@ const Popup = ({onSubmit}) => {
                     <button id="submit">Submit</button>
                 </form>
             </div>
-            </OutsideAlerter>
+            
+
         </>
     )
 }

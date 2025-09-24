@@ -12,13 +12,3 @@
     text-align: center; 
 }
 
-#popup-blur-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(50, 41, 47, 0.18);
-    backdrop-filter: blur(6px);
-    z-index: 999;
-}
