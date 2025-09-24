@@ -1,0 +1,12 @@
+
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      # Mount a named volume to store the SQLite database file
+      - sqlite_data:/app/data
+
+volumes:
+  sqlite_data:

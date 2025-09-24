@@ -1,0 +1,21 @@
+# Use a suitable base image for your application (e.g., Python, Node.js, etc.)
+FROM python:3.13-slim
+
+# Set the working directory inside the container
+WORKDIR /backend
+
+# Install any system-level dependencies for SQLite (e.g., sqlite3)
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev && rm -rf /var/lib/apt/lists/*
+
+# Copy your application's requirements file and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your application code
+COPY . .
+
+# Expose the port your application listens on
+EXPOSE 80
+
+# Command to run your application
+CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
