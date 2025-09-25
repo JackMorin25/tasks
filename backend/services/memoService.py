@@ -14,5 +14,10 @@ class MemoPuller:
         memos = cur.fetchall()
         return [dict(row) for row in memos]
     
-    def putMemo():
-        pass
+    def putMemo(t, c):
+        db = get_db()
+        cur = db.execute(
+            'INSERT INTO memo (title, content) VALUES (?, ?);',
+            (t,c)
+        )
+        db.commit()
