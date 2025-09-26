@@ -26,7 +26,25 @@ const Mainpage = () => {
 
     }, []);
 
-    function addMemo(t,c) {
+    async function addMemo(t,c) {
+        const payload = {
+            title: t,
+            content: c
+        };
+
+        try{
+            fetch('http://localhost:80/memos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+        }
+        catch{
+            
+        }
+
         if(c){
             setMemos(prevMemos => [
             ...prevMemos,
