@@ -11,18 +11,25 @@ const Mainpage = () => {
 
 
     const [memos, setMemos] = useState([]);
-    const [data, setData] = useState([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
 
     useEffect(() => {
-        /*fetch('http://localhost:80/memos')
+
+        const fetchData = async () => {
+
+        fetch('http://localhost:80/memos')
         .then(response => response.json())
         .then(data => {
-            setData(data);
-            //check for response data and update cards
-            console.log(data);
-        });*/
+            data.forEach(d => {
+                 setMemos(prevMemos => [
+                        ...prevMemos,
+                        { title:d['title'], content:d['content']}
+                    ]);
+            });
+        });}
+
+        fetchData()
 
     }, []);
 
@@ -32,24 +39,27 @@ const Mainpage = () => {
             content: c
         };
 
-        try{
-            fetch('http://localhost:80/memos', {
+        if(c){ 
+            await fetch('http://localhost:80/memos/put', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(payload)
-            })
-        }
-        catch{
-            
-        }
-
-        if(c){
-            setMemos(prevMemos => [
-            ...prevMemos,
-            { title:t, content:c }
-            ]);
+            }).then(response => {
+                if(!response){
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message || "POST error");
+                    });
+                }
+                else{
+                    setMemos(prevMemos => [
+                        ...prevMemos,
+                        { title:t, content:c }
+                    ]);
+                }
+             }
+            ) 
         }
 
         setIsSubmitting(false);
