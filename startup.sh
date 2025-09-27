@@ -21,6 +21,9 @@ trap cleanup INT TERM EXIT
 
 # Navigate to the backend directory and start the backend server
 cd ./backend
+echo "Activating virtual environment..."
+source ./.venv/bin/activate   # <<--- activate your venv
+echo "Starting backend server..."
 echo "Starting backend server..."
 python app.py &
 backend_pid=$!
