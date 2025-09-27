@@ -21,12 +21,7 @@ const Mainpage = () => {
         fetch('http://localhost:80/memos')
         .then(response => response.json())
         .then(data => {
-            data.forEach(d => {
-                 setMemos(prevMemos => [
-                        ...prevMemos,
-                        { title:d['title'], content:d['content']}
-                    ]);
-            });
+           setMemos(data.map(d => ({ title: d.title, content: d.content })));
         });}
 
         fetchData()
